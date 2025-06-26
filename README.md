@@ -41,24 +41,32 @@ Project Workflow
 1. Apache NiFi:
 Generates and sends JSON files to S3 bucket
 Uses processors like `GenerateFlowFile`, `UpdateAttribute`, and `PutS3Object`
+![image](https://github.com/user-attachments/assets/dad54e0b-b574-4762-a7a3-6bb3b8b3d311)
 
-2. AWS S3:
+
+3. AWS S3:
 Acts as the landing zone for incoming JSON files
 Bucket: `nifi-scd2-project`
+![image](https://github.com/user-attachments/assets/1d849955-b340-4592-abb7-044a88cd0f76)
 
-3. Snowflake Configuration:
+
+5. Snowflake Configuration:
 Storage Integration created with proper IAM Role
 External Stage defined to connect Snowflake with S3
 File Format set to JSON
 Snowpipe created with AUTO_INGEST = TRUE
 Staging Table (user_stage_json) using `VARIANT` data type
 Final Dimension Table (user_dim) stores structured data
+![image](https://github.com/user-attachments/assets/1515999a-7394-4476-a0ba-a15a64f48198)
 
-4. Auto Merge Logic:
+
+7. Auto Merge Logic:
 MERGE statement handles inserts and updates
 Snowflake Task runs every minute to apply merge logic continuously
+![image](https://github.com/user-attachments/assets/fdd1ddc4-8964-4a3f-a022-162f5db7f5d6)
 
-5. Sample SQL Highlights
+
+9. Sample SQL Highlights
 CREATE OR REPLACE PIPE user_pipe
 AUTO_INGEST = TRUE
 AS
