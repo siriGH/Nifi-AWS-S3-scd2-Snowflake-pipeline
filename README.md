@@ -29,10 +29,15 @@ Tools & Technologies
 Folder Structure:
 
 ├── SnowflakeCode.sql # All Snowflake objects (staging, pipe, tasks, merge)
+
 ├── DataStoringInS3Bucket.PNG # Screenshot: AWS S3 bucket with incoming files
+
 ├── NIFI_Flow.PNG # Screenshot: NiFi flow to S3
+
 ├── Snowflake_StageTable.PNG # Screenshot: Staging table data in Snowflake
+
 ├── SnowflakeTargetTable.PNG # Screenshot: Final dimension table (user_dim)
+
 ├── README.md # Project documentation (this file)
 
 
